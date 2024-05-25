@@ -2,7 +2,7 @@ import config
 from tools import retry
 
 
-@retry(max_attempts=1, retry_delay_seconds=10, active=not device.config.DEBUG)
+@retry(max_attempts=1, retry_delay_seconds=10, active=not config.DEBUG)
 def cpu_func(method, params):
     method(*params)
 
