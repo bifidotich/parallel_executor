@@ -1,5 +1,4 @@
 import config
-import tensorflow as tf
 from tools import retry
 
 
@@ -14,16 +13,16 @@ def worker(params_queue, method):
         cpu_func(method, params)
 
 
-@retry(max_attempts=1, retry_delay_seconds=40, active=not device.config.DEBUG)
+@retry(max_attempts=1, retry_delay_seconds=40, active=not config.DEBUG)
 def gpu_func(method, params):
     method(*params)
 
 
 def gpu_worker(params_queue, method, idx_device):
 
-    gpu_devices = tf.config.experimental.list_physical_devices('GPU')
-    if gpu_devices:
-        tf.config.experimental.set_visible_devices(gpu_devices[idx_device], 'GPU')
+    # gpu_devices = tf.config.experimental.list_physical_devices('GPU')
+    # if gpu_devices:
+    #     tf.config.experimental.set_visible_devices(gpu_devices[idx_device], 'GPU')
 
     while not params_queue.empty():
         params = params_queue.get(timeout=1)
