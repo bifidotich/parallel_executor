@@ -2,9 +2,7 @@ import multiprocessing
 import functools
 import os
 import time
-import config
-import cpu
-import gpu
+from parallel_executor import config, cpu, gpu
 
 
 def generate_combinations_params_list(input_list):
