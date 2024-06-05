@@ -1,2 +1,2 @@
 DEBUG = True
-VAL_CORE = 0.6
+VAL_CORE = 0.8
