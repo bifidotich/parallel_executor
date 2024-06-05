@@ -1,5 +1,5 @@
-import config
-from tools import retry
+from parallel_executor import config
+from parallel_executor.utl import retry
 
 
 @retry(max_attempts=1, retry_delay_seconds=10, active=not config.DEBUG)

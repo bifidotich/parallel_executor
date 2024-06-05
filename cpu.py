@@ -1,5 +1,5 @@
 import multiprocessing
-from worker import worker
+from parallel_executor.worker import worker
 
 
 def parallel_method(method, params_list, num_processes=10):

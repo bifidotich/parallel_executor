@@ -1,5 +1,5 @@
 import multiprocessing
-from worker import gpu_worker
+from parallel_executor.worker import gpu_worker
 
 
 def parallel_fit(method, params_list, devices=None):
